@@ -1,7 +1,6 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
-import CheckoutActions from './pom/objectActions/checkoutActions';
-import checkoutActions from './pom/objectActions/checkoutActions';
+const { default: checkoutActions } = require('../tests/pom/objectActions/checkoutActions');
 const { default: loginActions } = require('../tests/pom/objectActions/loginActions');
 
 test('Login', async ({ page }) =>{
