@@ -9,6 +9,7 @@ export default class loginActions {
     constructor(page){
         this.page = page;
         this.loginPage = new loginPage();
+        
         this.inputUsername = page.locator(this.loginPage.inputUsername);
         this.inputPassword = page.locator(this.loginPage.inputPassword);
         this.clickButtonLogin = page.locator(this.loginPage.buttonLogin);
