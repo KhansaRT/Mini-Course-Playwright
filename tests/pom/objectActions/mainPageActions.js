@@ -17,7 +17,7 @@ export default class mainPageActions {
     }
 
     async AddToChart() {
-        await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html');
+        await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html'); // validate user move to main page
         await this.addToCartProduct1.click();
         await this.addToCartProduct2.click();
         await this.addToCartProduct3.click();
