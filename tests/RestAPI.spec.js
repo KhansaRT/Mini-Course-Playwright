@@ -1,21 +1,11 @@
 // @ts-check
 import { test, expect, request } from '@playwright/test';
-const { default: checkoutActions } = require('../tests/pom/objectActions/checkoutActions');
-const { default: loginActions } = require('../tests/pom/objectActions/loginActions');
+/* 
+  API TESTING
+  API test URL = https://reqres.in/ 
+*/
 
-test('Login', async ({ page }) =>{
-  const objLogin = new loginActions(page);
-  await objLogin.goto();
-  await objLogin.Login();
-});
-
-test('Checkout', async({ page }) =>{
-  const objCheckout = new checkoutActions(page);
-  await objCheckout.goto();
-  await objCheckout.Checkout();
-});
-
-test('contoh get', async ({ page }) => {
+test('GET List Users', async ({ page }) => {
     const apiContext = await request.newContext();
     const res = await apiContext.get('https://reqres.in/api/users?page=2');
     expect(res.status()).toBe(200);
@@ -24,7 +14,7 @@ test('contoh get', async ({ page }) => {
     expect(respondJSON.total).toBe(12);
 });
 
-test('contoh post', async ({ page }) => {
+test('POST Create User', async ({ page }) => {
     const apiContext = await request.newContext();
     const postData = {
       "name": "morpheus",
